@@ -1,3 +1,4 @@
 import FindCourse from './FindCourse/FindCourse';
+import Advantages from './Advantages/Advantages';
 
-export { FindCourse };
+export { FindCourse, Advantages };

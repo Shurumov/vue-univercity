@@ -2,6 +2,7 @@
   <div id="app">
     <Header/>
     <FindCourse/>
+    <Advantages/>
 
     <Select
       :options="[{label: 'Canada', value: 'ca'}, {label: 'United States',value: 'us'}]"
@@ -59,7 +60,7 @@
   import Button from './components/Button';
   import Select from './components/Fields/Select';
   import Header from './components/Header';
-  import { FindCourse } from './components/Sections'
+  import { FindCourse, Advantages } from './components/Sections'
 
   export default {
     name: 'app',
@@ -69,7 +70,8 @@
       ButtonCoursesType,
       Select,
       Header,
-      FindCourse
+      FindCourse,
+      Advantages
     },
     data: function() {
       return {
