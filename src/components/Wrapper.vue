@@ -28,7 +28,7 @@
 <style lang="scss">
   .wrapper {
     max-width: 400px;
-    height: 100%;
+    /*height: 100%;*/
     display: flex;
   }
 </style>

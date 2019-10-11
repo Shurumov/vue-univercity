@@ -2,13 +2,7 @@
   <div id="app">
     <Header/>
     <FindCourse/>
-    <TextField
-      type="search"
-      placeholder="Search"
-    />
-    <TextField
-      placeholder="text"
-    />
+
     <Select
       :options="[{label: 'Canada', value: 'ca'}, {label: 'United States',value: 'us'}]"
       :defaultInputValue="{label: 'Canada', value: 'ca'}"
@@ -64,7 +58,6 @@
   import ButtonCoursesType from './components/ButtonCoursesType';
   import Button from './components/Button';
   import Select from './components/Fields/Select';
-  import TextField from './components/Fields/TextField';
   import Header from './components/Header';
   import { FindCourse } from './components/Sections'
 
@@ -75,7 +68,6 @@
       Button,
       ButtonCoursesType,
       Select,
-      TextField,
       Header,
       FindCourse
     },

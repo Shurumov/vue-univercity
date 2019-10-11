@@ -36,8 +36,54 @@
       </div>
     </header>
 
+    <header class="header-mobile">
+      <div class="header-mobile__content">
+        <div class="header-mobile__content-left">
+          <div class="header-mobile__content-search" @click="toggleMobileNav">
+            <Wrapper padding="12px">
+              <MenuIcon
+                width="22"
+                height="22"
+              />
+            </Wrapper>
+          </div>
+          <div class="header-mobile__content-search" @click="toggleMobileSearch">
+            <Wrapper padding="12px">
+              <SearchIcon
+                      width="22"
+                      height="22"
+              />
+            </Wrapper>
+          </div>
+        </div>
+        <div class="header-mobile__content-logo">
+          <a :href="ROUTES.HOME_PAGE">
+            <div class="header__logo">
+              <img alt="Vue logo" src="../../assets/logo.png">
+            </div>
+          </a>
+        </div>
+        <Dropdown
+                dropdownType="emptyCart"
+                :text="text"
+                :linkText="linkText"
+                bubblePosition="left"
+                isMobile
+                width="270px">
+          <Cart />
+        </Dropdown>
+      </div>
+      <div
+              v-if="showMobileSearch"
+              class="header-mobile__search"
+      >
+        <Search maxWidth="100%" />
+      </div>
+    </header>
+
     <MobileLeftMenu
-            :show="showMobileSearch"
+            :show="showMobileNav"
+            :toggleMenu="toggleMobileNav"
             language="RU"
     />
   </fragment>
@@ -53,6 +99,9 @@
   import Wrapper from '../Wrapper';
   import { ROUTES } from "../../config/constants";
   import { Fragment } from 'vue-fragment'
+  import MenuIcon from '../icons/menu.svg'
+  import SearchIcon from '../icons/search.svg'
+
   import lang from './lang.json';
 
   export default {
@@ -72,6 +121,8 @@
       Catalog,
       Search,
       Wrapper,
+      MenuIcon,
+      SearchIcon,
     },
     data() {
       return {
@@ -90,10 +141,10 @@
     },
 
     methods: {
-      toggleMobileSearch: function () {
+      toggleMobileSearch: function() {
         this.showMobileSearch = !this.showMobileSearch;
       },
-      toggleMobileNav: () => {
+      toggleMobileNav: function() {
         this.showMobileNav = !this.showMobileNav;
       },
     }
