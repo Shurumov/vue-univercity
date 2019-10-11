@@ -3,75 +3,50 @@
     <Header/>
     <FindCourse/>
     <Advantages/>
-
+    <Recommendations/>
+    <NonStudents/>
+    <Partners/>
+    <Footer/>
     <Select
       :options="[{label: 'Canada', value: 'ca'}, {label: 'United States',value: 'us'}]"
       :defaultInputValue="{label: 'Canada', value: 'ca'}"
     />
-
-    <div style="width: 330px">
-      <Dropdown
-              dropdownType="menu"
-              :menu="menuStructure"
-      >
-        <Button
-                colorStyle="transparent"
-                cssModify="font-weight: normal"
-        >
-          Меню
-        </Button>
-      </Dropdown>
-      <Dropdown
-              dropdownType="emptyCart"
-              text="Здесь мог быть ваш текст"
-              linkText="А здесь ссылка"
-              width="330px"
-              bubblePosition="left"
-      >
-        <Button
-                colorStyle="transparent"
-                cssModify="font-weight: normal"
-        >
-          Кнопка дропдауна
-        </Button>
-      </Dropdown>
-    </div>
-
-    <Button
-            type="bordered"
-            :onClick="test"
-            modificationClass="modClass"
-    >
-      123
-    </Button>
     <br>
     <ButtonCoursesType
             :clickButton="test"
     />
     <br>
     <img alt="Vue logo" src="./assets/logo.png">
-
+    <Icon
+      :glyph="GLYPH.catalog"
+      fill="#000000"
+      :width='42'
+      :height='42'
+    />
   </div>
 </template>
 
 <script>
-  import Dropdown from './components/Dropdown';
   import ButtonCoursesType from './components/ButtonCoursesType';
-  import Button from './components/Button';
   import Select from './components/Fields/Select';
   import Header from './components/Header';
-  import { FindCourse, Advantages } from './components/Sections'
+  import Footer from './components/Footer/Footer';
+  import Icon, { GLYPH } from './components/Icon/Icon';
+  import { FindCourse, Advantages, Recommendations, NonStudents, Partners } from './components/Sections'
 
   export default {
     name: 'app',
     components: {
-      Dropdown,
-      Button,
       ButtonCoursesType,
       Select,
       Header,
       FindCourse,
-      Advantages
+      Advantages,
+      Icon,
+      Recommendations,
+      NonStudents,
+      Partners,
+      Footer,
     },
     data: function() {
       return {
@@ -174,7 +149,8 @@
             title: 'Marketing',
             icon: 'https://img.icons8.com/wired/50/000000/marketing.png',
           },
-        ]
+        ],
+        GLYPH,
       }
     },
     methods: {
@@ -188,6 +164,9 @@
 
 <style lang="scss">
   @import "./styles/global";
+  @import '~bootstrap/dist/css/bootstrap.css';
+  @import '~bootstrap/dist/css/bootstrap-grid.css';
+  @import "./styles/bootstrap";
 
   body {
     margin: 0;
