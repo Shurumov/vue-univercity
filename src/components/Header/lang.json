@@ -1,0 +1,14 @@
+{
+  "EN": {
+    "cart" : {
+      "text": "Your cart is empty.",
+      "linkText": "Keep shopping"
+    }
+  },
+  "RU": {
+    "cart" : {
+      "text": "Корзина пуста",
+      "linkText": "Продолжить поиск"
+    }
+  }
+}

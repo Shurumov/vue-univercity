@@ -1,87 +1,47 @@
 <template>
-  <div id="app">
-    <Header/>
-    <FindCourse/>
-    <TextField
-      type="search"
-      placeholder="Search"
-    />
-    <TextField
-      placeholder="text"
-    />
-    <Select
-      :options="[{label: 'Canada', value: 'ca'}, {label: 'United States',value: 'us'}]"
-      :defaultInputValue="{label: 'Canada', value: 'ca'}"
-    />
-
-    <div style="width: 330px">
-      <Dropdown
-              dropdownType="menu"
-              :menu="menuStructure"
-      >
-        <Button
-                colorStyle="transparent"
-                cssModify="font-weight: normal"
-        >
-          Меню
-        </Button>
-      </Dropdown>
-      <Dropdown
-              dropdownType="emptyCart"
-              text="Здесь мог быть ваш текст"
-              linkText="А здесь ссылка"
-              width="330px"
-              bubblePosition="left"
-      >
-        <Button
-                colorStyle="transparent"
-                cssModify="font-weight: normal"
-        >
-          Кнопка дропдауна
-        </Button>
-      </Dropdown>
-    </div>
-
-    <Button
-            type="bordered"
-            :onClick="test"
-            modificationClass="modClass"
+  <Dropdown
+          dropdownType="menu"
+          :menu="data"
+          bubbleIndent="-2px"
+  >
+    <Wrapper
+            margin="0 2px"
+            padding="9px 0"
     >
-      123
-    </Button>
-    <br>
-    <ButtonCoursesType
-            :clickButton="test"
-    />
-    <br>
-    <img alt="Vue logo" src="./assets/logo.png">
-
-  </div>
+      <div class="header-catalog">
+        <CatalogIcon
+                width="15"
+                height="13"
+        />
+        {{catalogTitle}}
+      </div>
+    </Wrapper>
+  </Dropdown>
 </template>
 
 <script>
-  import Dropdown from './components/Dropdown';
-  import ButtonCoursesType from './components/ButtonCoursesType';
-  import Button from './components/Button';
-  import Select from './components/Fields/Select';
-  import TextField from './components/Fields/TextField';
-  import Header from './components/Header';
-  import { FindCourse } from './components/Sections'
+  import CatalogIcon from '../../icons/catalog.svg';
+  import Dropdown from '../../Dropdown';
+  import Wrapper from '../../Wrapper';
+
+  import lang from './lang';
 
   export default {
-    name: 'app',
-    components: {
-      Dropdown,
-      Button,
-      ButtonCoursesType,
-      Select,
-      TextField,
-      Header,
-      FindCourse
+    name: 'Catalog',
+    props: {
+      language: {
+        type: String,
+        default: 'EN'
+      }
     },
-    data: function() {
+    components: {
+      CatalogIcon,
+      Dropdown,
+      Wrapper
+    },
+    data: function () {
       return {
-        menuStructure: [
+        data: [
           {
             title: 'Develop',
             icon: 'https://img.icons8.com/ios/50/000000/source-code-filled.png',
@@ -183,27 +143,23 @@
         ]
       }
     },
-    methods: {
-      test: function () {
-        // eslint-disable-next-line
-        console.log(1);
+    computed: {
+      catalogTitle: function () {
+        return lang[this.language].catalogTitle
       }
     }
   }
 </script>
 
 <style lang="scss">
-  @import "./styles/global";
-
-  body {
-    margin: 0;
-  }
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    /*margin-top: 60px;*/
+  .header-catalog {
+    height: 44px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-left: 10px;
+    cursor: pointer;
   }
 </style>

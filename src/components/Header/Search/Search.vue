@@ -1,0 +1,72 @@
+<template>
+  <form
+          class="header-search-form"
+          @submit.prevent=""
+  >
+    <TextField
+      type="search"
+      :placeholder="placeholder"
+      :name="name"
+    />
+    <Button colorStyle="search" type="submit" modificationClass="header-search-form__submit">
+      <SerchIcon fill="#2727a4" width="20" height="20" />
+    </Button>
+  </form>
+</template>
+
+<script>
+  import lang from './lang';
+  import TextField from '../../Fields/TextField'
+  import Button from '../../Button'
+  import SerchIcon from '../../icons/search.svg'
+
+  export default {
+    name: 'HeaderSearch',
+    props: {
+      language: {
+        type: String,
+        default: 'EN'
+      }
+    },
+    components: {
+      TextField,
+      Button,
+      SerchIcon
+    },
+    computed: {
+      name: function () {
+        return lang[this.language].search.name
+      },
+      placeholder: function () {
+        return lang[this.language].search.placeholder
+      }
+    }
+  }
+</script>
+
+<style lang="scss">
+  @import '../../../styles/_variables';
+  .header-search-form {
+    max-width: 50%;
+    display: flex;
+    margin: 0 30px;
+    flex: 1;
+    border: 1px solid $gray-light;
+    background-color: $gray-light;
+    outline: none;
+    border-radius: 20px;
+
+    button {
+      padding: 11px;
+    }
+  }
+
+  .header-search-form__submit {
+    &:hover {
+      svg {
+        fill: $white;
+      }
+    }
+  }
+
+</style>

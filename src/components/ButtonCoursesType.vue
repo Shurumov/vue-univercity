@@ -5,6 +5,7 @@
       :key="index"
       :modificationClass="getClass('btn_category-toggle_active', index)"
       :onClick="() => {stateBtn(option, index); clickButton()}"
+      colorStyle="category"
     >
       {{option}}
     </Button>

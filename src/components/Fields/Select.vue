@@ -4,6 +4,7 @@
           v-model="selected"
           :options="options"
           :contents="{Deselect}"
+          :clearable="false"
   />
 </template>
 
@@ -18,7 +19,7 @@
     },
     props: {
       options: Array,
-      defaultInputValue: String,
+      defaultInputValue: Object,
     },
     data() {
       return {
@@ -37,7 +38,7 @@
 
 <style lang="scss">
 .select-base {
-  width: 160px;
+  width: 180px;
   border: 1px solid #686f7a;
   border-radius: 3px;
   &:hover, &:focus {
@@ -49,10 +50,9 @@
   .vs__dropdown-toggle {
     border: 1px solid transparent;
     border-radius: 3px;
-    width: 160px;
-    &:hover, &:focus {
-      border-color: #29303b;
-    }
+    width: 180px;
+    padding: 0;
+
     &:active {
       background-color: #f7f8fa;
     }
@@ -61,6 +61,10 @@
     margin-bottom: 1px;
     background-color: #fff;
     box-shadow: 0 4px 16px rgba(20,23,28,.25);
+  }
+  .vs__actions {
+    padding: 8px;
+    transform: rotate(180deg);
   }
 }
 </style>

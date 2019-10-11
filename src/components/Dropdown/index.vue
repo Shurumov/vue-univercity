@@ -5,19 +5,17 @@
     <div
       v-if="displayBubble"
       :class="['dropdown__bubble', dropdownClasses]"
-      :style="{'width': width}"
+      :style="{'width': width, 'top': `calc(100% + ${bubbleIndent})` }"
     >
-    <Menu
-        v-if="dropdownType === 'menu'"
-        :menu="menu"
-    />
-
-    <EmptyCart
-      v-else-if="dropdownType === 'emptyCart'"
-      :text="text"
-      :linkText="linkText"
-    />
-
+      <Menu
+          v-if="dropdownType === 'menu'"
+          :menu="menu"
+      />
+      <EmptyCart
+        v-else-if="dropdownType === 'emptyCart'"
+        :text="text"
+        :linkText="linkText"
+      />
     </div>
   </div>
 </template>
@@ -40,6 +38,7 @@
       width: String,
       bubblePosition: String,
       isMobile: Boolean,
+      bubbleIndent: String,
     },
     data() {
       return {
@@ -70,7 +69,7 @@
     height: 100%;
     &__bubble {
       position: absolute;
-      top: calc(100% - 2px);
+      /*top: calc(100% - 2px);*/
       left: 0;
       z-index: 1000;
       display: block;

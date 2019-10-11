@@ -1,7 +1,7 @@
 <template>
   <button
-    :class="['btn-action', customClass[type], modificationClass]"
-    :style="cssModify"
+    :class="['btn-action', customClass[colorStyle], modificationClass]"
+    :style="styleModify"
     :type="type"
     @click="onClick"
   >
@@ -19,8 +19,9 @@
         default: () => {}
       },
       type: String,
+      colorStyle: String,
       modificationClass: String,
-      cssModify: String,
+      styleModify: String,
     },
     data() {
       return {
