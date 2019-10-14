@@ -4,12 +4,18 @@
     <FindCourse/>
     <Advantages/>
     <Recommendations/>
+    <Comments/>
     <NonStudents/>
     <Partners/>
     <Footer/>
+
+    <ItemCourse
+            :data="itemCourse"
+    />
+
     <Select
-      :options="[{label: 'Canada', value: 'ca'}, {label: 'United States',value: 'us'}]"
-      :defaultInputValue="{label: 'Canada', value: 'ca'}"
+            :options="[{label: 'Canada', value: 'ca'}, {label: 'United States',value: 'us'}]"
+            :defaultInputValue="{label: 'Canada', value: 'ca'}"
     />
     <br>
     <ButtonCoursesType
@@ -18,10 +24,10 @@
     <br>
     <img alt="Vue logo" src="./assets/logo.png">
     <Icon
-      :glyph="GLYPH.catalog"
-      fill="#000000"
-      :width='42'
-      :height='42'
+            :glyph="GLYPH.catalog"
+            fill="#000000"
+            :width='42'
+            :height='42'
     />
   </div>
 </template>
@@ -31,8 +37,9 @@
   import Select from './components/Fields/Select';
   import Header from './components/Header';
   import Footer from './components/Footer/Footer';
-  import Icon, { GLYPH } from './components/Icon/Icon';
-  import { FindCourse, Advantages, Recommendations, NonStudents, Partners } from './components/Sections'
+  import ItemCourse from './components/CustomCarousel/ItemCourse/index';
+  import Icon, {GLYPH} from './components/Icon/Icon';
+  import { FindCourse, Advantages, Recommendations, NonStudents, Partners, Comments} from './components/Sections'
 
   export default {
     name: 'app',
@@ -47,8 +54,10 @@
       NonStudents,
       Partners,
       Footer,
+      ItemCourse,
+      Comments,
     },
-    data: function() {
+    data: function () {
       return {
         menuStructure: [
           {
@@ -151,6 +160,26 @@
           },
         ],
         GLYPH,
+        itemCourse: {
+          "title": "iPhone Photography | Take Professional Photos On Your iPhone",
+          "author": "Dale McManus",
+          "img": "https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+          "price": "руб.4,799",
+          "currentPrice": "руб.899",
+          "stars": 4.8,
+          "rating": "2,860",
+          "description": "Learn Python like a Professional! Start from the basics and go all the way to creating your own applications and games!",
+          "update": "01/2019",
+          "category": "iPhone",
+          "lectures": "50",
+          "hours": "12,5",
+          "levels": "All levels",
+          "objective": [
+            "You will learn to create a (CMS) Content Management System like WordPress, Drupal or Joomla",
+            "You will learn how to use Databases",
+            "You will learn MySQL"
+          ]
+        }
       }
     },
     methods: {
@@ -164,13 +193,12 @@
 
 <style lang="scss">
   @import "./styles/global";
-  @import '~bootstrap/dist/css/bootstrap.css';
-  @import '~bootstrap/dist/css/bootstrap-grid.css';
   @import "./styles/bootstrap";
 
   body {
     margin: 0;
   }
+
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;

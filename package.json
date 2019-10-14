@@ -10,9 +10,13 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "core-js": "^2.6.5",
+    "jquery": "^3.4.1",
+    "v-tooltip": "^2.0.2",
     "vue": "^2.6.10",
     "vue-fragment": "^1.5.1",
     "vue-select": "^3.2.0",
+    "vue-slick": "^1.1.15",
+    "vue-star-rating": "^1.6.1",
     "vue-svg-loader": "^0.12.0"
   },
   "devDependencies": {
