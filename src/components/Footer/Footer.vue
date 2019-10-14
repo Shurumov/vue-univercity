@@ -1,7 +1,7 @@
 <template>
   <fragment>
-    <footer class="footer_main content_container">
-      <div class="row">
+    <footer class="footer_main">
+      <div class="row content_container">
         <div class="hidden-xs col-sm-9">
           <ul class="links">
             <li
@@ -82,6 +82,8 @@
 
   .footer {
     &_main {
+      display: flex;
+      justify-content: center;
       margin: 0 auto;
       padding: 30px 20px 0;
       background-color: $gray-light-2;
@@ -90,6 +92,7 @@
       line-height: 18px;
       width: 100%;
       .links {
+        text-align: left;
         height: 90px;
         padding-left: 0;
         margin-bottom: 10px;
