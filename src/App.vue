@@ -4,6 +4,7 @@
     <FindCourse/>
     <Advantages/>
     <Recommendations/>
+    <TopCategories/>
     <Comments/>
     <NonStudents/>
     <Partners/>
@@ -39,7 +40,7 @@
   import Footer from './components/Footer/Footer';
   import ItemCourse from './components/CustomCarousel/ItemCourse/index';
   import Icon, {GLYPH} from './components/Icon/Icon';
-  import { FindCourse, Advantages, Recommendations, NonStudents, Partners, Comments} from './components/Sections'
+  import { FindCourse, Advantages, Recommendations, NonStudents, Partners, Comments, TopCategories} from './components/Sections'
 
   export default {
     name: 'app',
@@ -56,6 +57,7 @@
       Footer,
       ItemCourse,
       Comments,
+      TopCategories,
     },
     data: function () {
       return {
@@ -200,10 +202,10 @@
   }
 
   #app {
+    text-align: left;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
     color: #2c3e50;
     /*margin-top: 60px;*/
   }
