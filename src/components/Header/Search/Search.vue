@@ -4,12 +4,17 @@
           @submit.prevent=""
   >
     <TextField
-      type="search"
-      :placeholder="placeholder"
-      :name="name"
+            type="search"
+            :placeholder="placeholder"
+            :name="name"
     />
     <Button colorStyle="search" type="submit" modificationClass="header-search-form__submit">
-      <SerchIcon fill="#2727a4" width="20" height="20" />
+      <Icon
+              name="search"
+              fill="#2727a4"
+              :width="20"
+              :height="20"
+      />
     </Button>
   </form>
 </template>
@@ -18,7 +23,8 @@
   import lang from './lang';
   import TextField from '../../Fields/TextField'
   import Button from '../../Button'
-  import SerchIcon from '../../icons/search.svg'
+  import Icon from '../../Icon';
+
 
   export default {
     name: 'HeaderSearch',
@@ -31,7 +37,7 @@
     components: {
       TextField,
       Button,
-      SerchIcon
+      Icon
     },
     computed: {
       name: function () {
@@ -46,6 +52,7 @@
 
 <style lang="scss">
   @import '../../../styles/_variables';
+
   .header-search-form {
     max-width: 50%;
     display: flex;

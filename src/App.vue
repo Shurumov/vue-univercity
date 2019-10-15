@@ -10,53 +10,24 @@
     <NonStudents/>
     <Partners/>
     <Footer/>
-
-    <ItemCourse
-            :data="itemCourse"
-    />
-
-    <Select
-            :options="[{label: 'Canada', value: 'ca'}, {label: 'United States',value: 'us'}]"
-            :defaultInputValue="{label: 'Canada', value: 'ca'}"
-    />
-    <br>
-    <ButtonCoursesType
-            :clickButton="test"
-    />
-    <br>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <Icon
-            :glyph="GLYPH.catalog"
-            fill="#000000"
-            :width='42'
-            :height='42'
-    />
   </div>
 </template>
 
 <script>
-  import ButtonCoursesType from './components/ButtonCoursesType';
-  import Select from './components/Fields/Select';
   import Header from './components/Header';
   import Footer from './components/Footer/Footer';
-  import ItemCourse from './components/CustomCarousel/ItemCourse/index';
-  import Icon, {GLYPH} from './components/Icon/Icon';
   import { FindCourse, Advantages, Recommendations, NonStudents, Partners, Comments, TopCategories, Courses } from './components/Sections'
 
   export default {
     name: 'app',
     components: {
-      ButtonCoursesType,
-      Select,
       Header,
       FindCourse,
       Advantages,
-      Icon,
       Recommendations,
       NonStudents,
       Partners,
       Footer,
-      ItemCourse,
       Comments,
       TopCategories,
       Courses,
@@ -163,7 +134,6 @@
             icon: 'https://img.icons8.com/wired/50/000000/marketing.png',
           },
         ],
-        GLYPH,
         itemCourse: {
           "title": "iPhone Photography | Take Professional Photos On Your iPhone",
           "author": "Dale McManus",
@@ -186,12 +156,6 @@
         }
       }
     },
-    methods: {
-      test: function () {
-        // eslint-disable-next-line
-        console.log(1);
-      }
-    }
   }
 </script>
 

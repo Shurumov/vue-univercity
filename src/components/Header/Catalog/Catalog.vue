@@ -9,9 +9,10 @@
             padding="9px 0"
     >
       <div class="header-catalog">
-        <CatalogIcon
-                width="15"
-                height="13"
+        <Icon
+                name="catalog"
+                :width="13"
+                :height="13"
         />
         {{catalogTitle}}
       </div>
@@ -20,7 +21,7 @@
 </template>
 
 <script>
-  import CatalogIcon from '../../icons/catalog.svg';
+  import Icon from '../../Icon';
   import Dropdown from '../../Dropdown';
   import Wrapper from '../../Wrapper';
 
@@ -35,7 +36,7 @@
       }
     },
     components: {
-      CatalogIcon,
+      Icon,
       Dropdown,
       Wrapper
     },

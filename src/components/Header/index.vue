@@ -10,8 +10,8 @@
           </a>
         </div>
         <div class="header__left-side">
-          <Catalog />
-          <Search />
+          <Catalog/>
+          <Search/>
         </div>
         <div class="header__right-side">
           <Dropdown
@@ -41,17 +41,19 @@
         <div class="header-mobile__content-left">
           <div class="header-mobile__content-search" @click="toggleMobileNav">
             <Wrapper padding="12px">
-              <MenuIcon
-                width="22"
-                height="22"
+              <Icon
+                      name="menu"
+                      :width="22"
+                      :height="22"
               />
             </Wrapper>
           </div>
           <div class="header-mobile__content-search" @click="toggleMobileSearch">
             <Wrapper padding="12px">
-              <SearchIcon
-                      width="22"
-                      height="22"
+              <Icon
+                      name="search"
+                      :width="22"
+                      :height="22"
               />
             </Wrapper>
           </div>
@@ -70,14 +72,14 @@
                 bubblePosition="left"
                 isMobile
                 width="270px">
-          <Cart />
+          <Cart/>
         </Dropdown>
       </div>
       <div
               v-if="showMobileSearch"
               class="header-mobile__search"
       >
-        <Search maxWidth="100%" />
+        <Search maxWidth="100%"/>
       </div>
     </header>
 
@@ -97,10 +99,10 @@
   import Search from './Search/Search';
   import Dropdown from '../Dropdown';
   import Wrapper from '../Wrapper';
-  import { ROUTES } from "../../config/constants";
-  import { Fragment } from 'vue-fragment'
-  import MenuIcon from '../icons/menu.svg'
-  import SearchIcon from '../icons/search.svg'
+  import {ROUTES} from "../../config/constants";
+  import {Fragment} from 'vue-fragment'
+  import Icon from '../Icon';
+
 
   import lang from './lang.json';
 
@@ -121,8 +123,7 @@
       Catalog,
       Search,
       Wrapper,
-      MenuIcon,
-      SearchIcon,
+      Icon,
     },
     data() {
       return {
@@ -141,10 +142,10 @@
     },
 
     methods: {
-      toggleMobileSearch: function() {
+      toggleMobileSearch: function () {
         this.showMobileSearch = !this.showMobileSearch;
       },
-      toggleMobileNav: function() {
+      toggleMobileNav: function () {
         this.showMobileNav = !this.showMobileNav;
       },
     }
@@ -161,15 +162,18 @@
     @media (max-width: 767px) {
       display: none;
     }
+
     &__right-side {
       display: flex;
       align-items: center;
       justify-content: flex-end;
+
       &-divider {
         display: block;
         margin-left: 16px;
       }
     }
+
     &__left-side {
       height: 100%;
       flex: 1;
@@ -178,6 +182,7 @@
       flex-direction: row;
       align-items: center;
     }
+
     &__logo-container {
       display: flex;
       flex-direction: row;
@@ -197,6 +202,7 @@
   .header__logo {
     line-height: 100%;
     margin: 0 16px 0 0;
+
     &_contatiner {
       display: flex;
       flex-direction: row;
@@ -213,6 +219,7 @@
 
   .header-mobile {
     box-shadow: 0 4px 4px $shadow-header;
+
     &__content {
       display: none;
       @media (max-width: 767px) {
@@ -220,22 +227,27 @@
         display: flex;
         justify-content: space-between;
       }
+
       &-menu {
         cursor: pointer;
       }
+
       &-search {
         cursor: pointer;
       }
+
       &-logo {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
       }
+
       &-left {
         display: flex;
       }
     }
+
     &__search {
       padding: 5px 0 15px;
     }

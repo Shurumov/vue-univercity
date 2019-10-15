@@ -3,27 +3,28 @@
     <div class="recommendations__top-border"></div>
     <div class="recommendations__banner">
       <div class="recommendations__banner_icons">
-        <ProfileIcon fill="#ffffff" width="30" height="30" />
-        <DeploymentIcon fill="#ffffff" width="30" height="30" />
-        <EnvironmentIcon fill="#ffffff" width="30" height="30" />
-        <ContactsIcon fill="#ffffff" width="30" height="30" />
-        <GatewayIcon fill="#ffffff" width="30" height="30" />
+        <Icon name="profile" fill="#ffffff" :width="30" :height="30" />
+        <Icon name="deployment" fill="#ffffff" :width="30" :height="30" />
+        <Icon name="environment" fill="#ffffff" :width="30" :height="30" />
+        <Icon name="contacts" fill="#ffffff" :width="30" :height="30" />
+        <Icon name="gateway" fill="#ffffff" :width="30" :height="30" />
       </div>
       <div class="recommendations__banner_text">
-        <BarChartIcon fill="#ffffff" width="30" height="30" />
+        <Icon name="barChart" fill="#ffffff" :width="30" :height="30" />
+
         <div class="recommendations__banner_text-center">
           <div class="title">{{title}}</div>
           <div class="subtitle">{{desc}}</div>
           <button class="button">{{btn}}</button>
         </div>
-        <FormIcon fill="#ffffff" width="30" height="30" />
+        <Icon name="form" fill="#ffffff" :width="30" :height="30" />
       </div>
       <div class="recommendations__banner_icons">
-        <PaperClipIcon fill="#ffffff" width="30" height="30" />
-        <WifiIcon fill="#ffffff" width="30" height="30" />
-        <UserIcon fill="#ffffff" width="30" height="30" />
-        <ShakeIcon fill="#ffffff" width="30" height="30" />
-        <SearchIcon fill="#ffffff" width="30" height="30" />
+        <Icon name="paperClip" fill="#ffffff" :width="30" :height="30" />
+        <Icon name="wifi" fill="#ffffff" :width="30" :height="30" />
+        <Icon name="user" fill="#ffffff" :width="30" :height="30" />
+        <Icon name="shake" fill="#ffffff" :width="30" :height="30" />
+        <Icon name="search" fill="#ffffff" :width="30" :height="30" />
       </div>
     </div>
   </div>
@@ -31,18 +32,7 @@
 
 <script>
   import lang from './lang';
-  import ProfileIcon from '../../icons/profile.svg';
-  import DeploymentIcon from '../../icons/deployment.svg';
-  import EnvironmentIcon from '../../icons/environment.svg';
-  import ContactsIcon from '../../icons/contacts.svg';
-  import GatewayIcon from '../../icons/gateway.svg';
-  import BarChartIcon from '../../icons/barChart.svg';
-  import FormIcon from '../../icons/form.svg';
-  import PaperClipIcon from '../../icons/paperClip.svg';
-  import WifiIcon from '../../icons/wifi.svg';
-  import UserIcon from '../../icons/user.svg';
-  import ShakeIcon from '../../icons/shake.svg';
-  import SearchIcon from '../../icons/search.svg';
+  import Icon from '../../Icon';
 
   export default {
     name: 'Recommendations',
@@ -53,18 +43,7 @@
       }
     },
     components: {
-      ProfileIcon,
-      DeploymentIcon,
-      EnvironmentIcon,
-      ContactsIcon,
-      GatewayIcon,
-      BarChartIcon,
-      FormIcon,
-      PaperClipIcon,
-      WifiIcon,
-      UserIcon,
-      ShakeIcon,
-      SearchIcon
+      Icon,
     },
     computed: {
       title: function () {
@@ -120,12 +99,9 @@
     }
   }
 
-  .recommendations__banner_text svg:first-child {
-    margin-left: 150px;
-  }
-
-  .recommendations__banner_text svg:last-child {
-    margin-right: 150px;
+  .recommendations__banner_text {
+    padding-left: 150px;
+    padding-right: 150px;
   }
 
   .recommendations__banner_icons .anticon,

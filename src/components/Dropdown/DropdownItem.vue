@@ -1,22 +1,27 @@
 <template>
   <li class="dropdown__menu-item" @mouseenter="this.toggleLevel" @mouseleave="this.toggleLevel">
     <a :href="null" class="dropdown__link">
-      <img v-if="item.icon" :src="item.icon" alt="" />
+      <img v-if="item.icon" :src="item.icon" alt=""/>
       <span class="text">{{item.title}}</span>
-      <ArrowRight v-if="item.subitems" width="10" height="10px"/>
+      <Icon
+              v-if="item.subitems"
+              name="arrowRight"
+              :width="10"
+              :height="10"
+      />
     </a>
     <ul v-if="item.subitems && displaySubLevel" class="dropdown__menu-sub-level">
       <DropdownItem
-        v-for="(item, index) in this.item.subitems"
-        :item="item"
-        :key="index"
+              v-for="(item, index) in this.item.subitems"
+              :item="item"
+              :key="index"
       />
     </ul>
   </li>
 </template>
 
 <script>
-  import ArrowRight from '../icons/arrowRight.svg';
+  import Icon from '../Icon';
 
   export default {
     name: 'DropdownItem',
@@ -24,15 +29,14 @@
       item: Object,
     },
     components: {
-      ArrowRight,
+      Icon,
     },
     data() {
       return {
         displaySubLevel: false,
       }
     },
-    computed: {
-    },
+    computed: {},
     methods: {
       toggleLevel: function () {
         this.displaySubLevel = !this.displaySubLevel;
@@ -49,6 +53,7 @@
     border-top: none;
     text-align: center;
     padding: 20px;
+
     &-link {
       color: $button-mobile-login-color;
       display: block;
@@ -57,6 +62,7 @@
       font-weight: 600;
       font-size: 13px;
       text-decoration: none;
+
       &:hover {
         color: $blue-dark;
         text-decoration: none;

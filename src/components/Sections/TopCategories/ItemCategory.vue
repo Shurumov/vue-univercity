@@ -1,19 +1,27 @@
 <template>
   <div class="item-category">
     <div class="item-category__wrapper">
-      <!--<Icon glyph={GLYPH[data.icon]} width={32} height={32} />-->
+      <Icon
+              :name="data.icon"
+              :width="32"
+              :height="32"
+      />
       <div class="item-category__title">{{data.title}}</div>
     </div>
   </div>
 </template>
 
 <script>
+  import Icon from '../../Icon'
 
   export default {
     name: 'ItemCategory',
+    components: {
+      Icon,
+    },
     props: {
       data: Object,
-    }
+    },
   }
 </script>
 

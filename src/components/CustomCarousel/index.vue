@@ -1,19 +1,19 @@
 <template>
   <slick
           :options="settings">
-    <template v-if="typeItem === 'comment'">
+    <fragment v-if="typeItem === 'comments'">
       <ItemComment v-for="(item, index) of data"
                    :data="item"
                    :key="index"
       />
-    </template>
-    <template v-else-if="typeItem === 'course'">
+    </fragment>
+    <fragment v-else-if="typeItem === 'course'">
       <ItemCourse v-for="(item, index) of data"
                   :data="item"
                   :key="index"
                   :id="id"
       />
-    </template>
+    </fragment>
   </slick>
 </template>
 
@@ -21,7 +21,7 @@
   import ItemComment from './ItemComment';
   import ItemCourse from './ItemCourse';
   import Slick from 'vue-slick';
-
+  import { Fragment } from 'vue-fragment';
 
   export default {
     name: 'CustomCarousel',
@@ -35,6 +35,7 @@
       ItemComment,
       ItemCourse,
       Slick,
+      Fragment
     },
     data() {
       return {

@@ -9,19 +9,19 @@
     </div>
     <div class="item__popover_info">
       <div class="item-info">
-        <!--<Icon glyph={GLYPH.playCircle} width={10} />-->
+        <Icon name="playCircle" :width="10"/>
         <span>
           {{data.lectures}} {{titles.lectures}}
         </span>
       </div>
       <div class="item-info">
-        <!--<Icon glyph={GLYPH.clockCircle} width={10} />-->
+        <Icon name="clockCircle" :width="10"/>
         <span>
           {{data.hours}} {{titles.hours}}
         </span>
       </div>
       <div class="item-info">
-        <!--<Icon glyph={GLYPH.project} width={10} />-->
+        <Icon name="project" :width="10"/>
         <span>{{data.levels}}</span>
       </div>
     </div>
@@ -37,13 +37,15 @@
     <div class="item__popover_buttons">
       <div class="item__popover_add-card">{{titles.cart}}</div>
       <div class="item__popover_add-wishlist">
-        <!--<Icon glyph={GLYPH.heart} width={30} height={30} fill="$button-blue" />-->
+        <Icon name="heart" :width="30" :height="30" fill="$button-blue"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+  import Icon from '../../Icon'
+
   export default {
     name: 'Popover',
     props: {
@@ -65,7 +67,10 @@
         type: String,
         default: ''
       }
-    }
+    },
+    components: {
+      Icon,
+    },
   }
 </script>
 
@@ -287,7 +292,7 @@
 
   .item__popover_info .item-info {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
 
     span {
       margin-left: 5px;

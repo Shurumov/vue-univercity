@@ -1,18 +1,22 @@
 <template>
   <div class="shopping-list">
     <div class="shopping-list__icon">
-      <CartIcon width="20" height="20"/>
+      <Icon
+              name="shoppingCart"
+              :width="20"
+              :height="20"
+      />
     </div>
   </div>
 </template>
 
 <script>
-  import CartIcon from '../icons/shoppingCart.svg';
+  import Icon from '../Icon';
 
   export default {
     name: 'Cart',
     components: {
-      CartIcon
+      Icon,
     },
   }
 </script>

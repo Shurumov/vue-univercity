@@ -6,7 +6,11 @@
               class="advantages-section__item" :key="item.title"
       >
         <div class="advantages-section__item-icon">
-          <!--<Icon glyph={GLYPH[item.iconType]} fill="#ffffff" width={42} height={42} />-->
+          <Icon
+                  :name="item.iconType"
+                  fill="#ffffff"
+                  :width="42"
+          />
         </div>
         <div class="advantages-section__item-text">
           <div class="advantages-section__item-title">{{item.title}}</div>
@@ -19,10 +23,12 @@
 
 <script>
   import lang from './lang'
+  import Icon from '../../Icon'
 
   export default {
     name: 'Advantages',
     components: {
+      Icon,
     },
     props: {
       language: {
