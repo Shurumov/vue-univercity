@@ -1,10 +1,19 @@
 <template>
   <slick
           :options="settings">
-    <ItemComment v-for="(item, index) of data"
-                 :data="item"
-                 :key="index"
-    />
+    <template v-if="typeItem === 'comment'">
+      <ItemComment v-for="(item, index) of data"
+                   :data="item"
+                   :key="index"
+      />
+    </template>
+    <template v-else-if="typeItem === 'course'">
+      <ItemCourse v-for="(item, index) of data"
+                  :data="item"
+                  :key="index"
+                  :id="id"
+      />
+    </template>
   </slick>
 </template>
 
@@ -19,6 +28,8 @@
     props: {
       data: Array,
       options: Object,
+      typeItem: String,
+      id: String,
     },
     components: {
       ItemComment,

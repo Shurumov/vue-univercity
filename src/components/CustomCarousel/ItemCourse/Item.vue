@@ -10,10 +10,12 @@
           <div class="author">{{data.author}}</div>
           <div class="stars">
             <StarRatings
-                    :rating="data.stars"
-                    starRatedColor="#f4c150"
-                    starDimension="15px"
-                    starSpacing="0px"
+                    :rating="4.5"
+                    active-color="#f4c150"
+                    :star-size="15"
+                    :show-rating="false"
+                    :read-only="true"
+                    :round-start-rating="false"
                     name="rating"
             />
             <span class="stars__rating">
@@ -68,9 +70,6 @@
       height: auto;
     }
     &:hover {
-      //&:before {
-      //  opacity: 1;
-      //}
 
       .item__wrapper_header {
         background: $banner-background-color;

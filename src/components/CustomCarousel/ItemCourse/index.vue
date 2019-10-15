@@ -5,30 +5,44 @@
             position="auto"
     >
       <Item :data="data"/>
-        <Popover
-          :data="data"
-          slot="popover"
-        />
+      <Popover
+              :data="data"
+              :objective="data.objective"
+              :titles="titles"
+              slot="popover"
+      />
     </v-popover>
   </div>
 </template>
 
 <script>
-  import { VPopover } from 'v-tooltip';
+  import {VPopover} from 'v-tooltip';
   import Item from './Item';
   import Popover from './Popover';
+  import lang from './lang';
+
   export default {
     name: 'ItemCourse',
     props: {
       data: {
         type: Object,
-        default: () => {},
+        default: () => {
+        },
+      },
+      language: {
+        type: String,
+        default: 'EN',
       }
     },
     components: {
       VPopover,
       Item,
       Popover,
+    },
+    computed: {
+      titles: function () {
+        return lang[this.language];
+      }
     }
   }
 </script>

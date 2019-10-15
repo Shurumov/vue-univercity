@@ -5,5 +5,6 @@ import NonStudents from './NonStudents/NonStudents';
 import Partners from './Partners/Partners';
 import Comments from './Comments';
 import TopCategories from './TopCategories';
+import Courses from './Courses';
 
-export { FindCourse, Advantages, Recommendations, NonStudents, Partners, Comments, TopCategories };
+export { FindCourse, Advantages, Recommendations, NonStudents, Partners, Comments, TopCategories, Courses };

@@ -6,7 +6,6 @@
     >
       <Button
               colorStyle="bordered"
-              style-modify="margin-right: 4px"
       >
         {{loginTitle}}
       </Button>

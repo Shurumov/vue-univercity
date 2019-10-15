@@ -1,9 +1,7 @@
 <template>
   <div class="item__popover">
-    1
     <div class="item__popover_update">
-      <!--{{titles.updated}} -->
-      {{data.update}}
+      {{titles.updated}} {{data.update}}
     </div>
     <div class="item__popover_title">{{data.title}}</div>
     <div class="item__popover_category">
@@ -13,15 +11,13 @@
       <div class="item-info">
         <!--<Icon glyph={GLYPH.playCircle} width={10} />-->
         <span>
-          {{data.lectures}}
-          <!--{{titles.lectures}}-->
+          {{data.lectures}} {{titles.lectures}}
         </span>
       </div>
       <div class="item-info">
         <!--<Icon glyph={GLYPH.clockCircle} width={10} />-->
         <span>
-          {{data.hours}}
-          <!--{{titles.hours}}-->
+          {{data.hours}} {{titles.hours}}
         </span>
       </div>
       <div class="item-info">
@@ -39,7 +35,7 @@
       </li>
     </ul>
     <div class="item__popover_buttons">
-      <!--<div class="item__popover_add-card">{{titles.cart}}</div>-->
+      <div class="item__popover_add-card">{{titles.cart}}</div>
       <div class="item__popover_add-wishlist">
         <!--<Icon glyph={GLYPH.heart} width={30} height={30} fill="$button-blue" />-->
       </div>
@@ -191,6 +187,7 @@
     width: 320px;
     padding: 15px;
     left: 200px;
+    text-align: left;
     z-index: 100;
     @media (max-width: 500px) {
       width: 250px;
@@ -207,7 +204,7 @@
   .item__popover_title {
     visibility: visible;
     display: block !important;
-    line-clamp: 3;
+    /*line-clamp: 3;*/
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: normal;
@@ -220,7 +217,7 @@
 
   .item__popover_description {
     display: block !important;
-    line-clamp: 3;
+    /*line-clamp: 3;*/
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: normal;
