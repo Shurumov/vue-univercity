@@ -22,6 +22,8 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
+  import { LANGUAGE_CONSTANTS } from 'store/modules';
   import ButtonCoursesType from 'components/ButtonCoursesType';
   import CarouselCourses from 'components/CarouselCourses';
   import lang from './lang';
@@ -31,12 +33,6 @@
     components: {
       ButtonCoursesType,
       CarouselCourses,
-    },
-    props: {
-      language: {
-        type: String,
-        default: 'EN',
-      }
     },
     data() {
       return {
@@ -353,6 +349,9 @@
       }
     },
     computed: {
+      ...mapGetters({
+        language: LANGUAGE_CONSTANTS.GET_LANGUAGE,
+      }),
       title: function () {
         return lang[this.language].title;
       },

@@ -20,6 +20,8 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
+  import { LANGUAGE_CONSTANTS } from 'store/modules';
   import lang from './lang';
   import TextField from 'components/Fields/TextField'
   import Button from 'components/Button'
@@ -28,18 +30,15 @@
 
   export default {
     name: 'HeaderSearch',
-    props: {
-      language: {
-        type: String,
-        default: 'EN'
-      }
-    },
     components: {
       TextField,
       Button,
       Icon
     },
     computed: {
+      ...mapGetters({
+        language: LANGUAGE_CONSTANTS.GET_LANGUAGE,
+      }),
       name: function () {
         return lang[this.language].search.name
       },

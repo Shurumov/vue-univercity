@@ -1,7 +1,7 @@
 <template>
   <section class="partners_main-page-wrapper">
     <div class="partners_main-page">
-      <div class="partners__text">Trusted by companies of all sizes</div>
+      <div class="partners__text">{{title}}</div>
       <a :href="null">
         <div class="partners__logos">
 
@@ -16,6 +16,9 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
+  import { LANGUAGE_CONSTANTS } from 'store/modules';
+  import lang from './lang';
   import adidas from './partners/adidas-logo.png'
   import booking from './partners/booking-logo.png'
   import volkswagen from './partners/volkswagen-logo.png'
@@ -66,6 +69,14 @@
           },
         ]
       }
+    },
+    computed: {
+      ...mapGetters({
+        language: LANGUAGE_CONSTANTS.GET_LANGUAGE,
+      }),
+      title: function () {
+        return lang[this.language].title
+      },
     }
   }
 </script>

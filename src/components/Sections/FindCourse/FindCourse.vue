@@ -10,23 +10,23 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
+  import { LANGUAGE_CONSTANTS } from 'store/modules';
   import lang from './lang'
+
   export default {
     name: 'FindCourse',
-    props: {
-      language: {
-        type: String,
-        default: 'EN',
-      }
-    },
     computed: {
+      ...mapGetters({
+        language: LANGUAGE_CONSTANTS.GET_LANGUAGE,
+      }),
       title: function () {
         return lang[this.language].title;
       },
       description: function () {
         return lang[this.language].description;
       },
-    }
+    },
   }
 </script>
 

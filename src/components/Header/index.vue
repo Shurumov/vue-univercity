@@ -93,6 +93,8 @@
 
 <script>
   import {Fragment} from 'vue-fragment'
+  import { mapGetters } from 'vuex';
+  import { LANGUAGE_CONSTANTS } from 'store/modules';
   import MobileLeftMenu from './MobileLeftMenu/MobileLeftMenu';
   import Cart from './Cart';
   import Controls from './Controls/Controls';
@@ -108,12 +110,7 @@
 
   export default {
     name: 'Header',
-    props: {
-      language: {
-        type: String,
-        default: 'EN',
-      }
-    },
+
     components: {
       MobileLeftMenu,
       Dropdown,
@@ -132,6 +129,9 @@
       }
     },
     computed: {
+      ...mapGetters({
+        language: LANGUAGE_CONSTANTS.GET_LANGUAGE,
+      }),
       text: function () {
         return lang[this.language].cart.text
       },

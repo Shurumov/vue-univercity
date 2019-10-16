@@ -21,6 +21,8 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
+  import { LANGUAGE_CONSTANTS } from 'store/modules';
   import Icon from 'components/Icon';
   import Dropdown from 'components/Dropdown';
   import Wrapper from 'components/Wrapper';
@@ -29,12 +31,6 @@
 
   export default {
     name: 'Catalog',
-    props: {
-      language: {
-        type: String,
-        default: 'EN'
-      }
-    },
     components: {
       Icon,
       Dropdown,
@@ -145,6 +141,9 @@
       }
     },
     computed: {
+      ...mapGetters({
+        language: LANGUAGE_CONSTANTS.GET_LANGUAGE,
+      }),
       catalogTitle: function () {
         return lang[this.language].catalogTitle
       }

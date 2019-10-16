@@ -24,6 +24,8 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
+  import { LANGUAGE_CONSTANTS } from 'store/modules';
   import Button from 'components/Button'
   import Wrapper from 'components/Wrapper';
   import lang from './lang'
@@ -34,13 +36,10 @@
       Button,
       Wrapper,
     },
-    props: {
-      language: {
-        type: String,
-        default: 'EN'
-      }
-    },
     computed: {
+      ...mapGetters({
+        language: LANGUAGE_CONSTANTS.GET_LANGUAGE,
+      }),
       loginTitle: function () {
         return lang[this.language].loginTitle;
       },

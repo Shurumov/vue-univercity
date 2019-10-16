@@ -31,21 +31,20 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
+  import { LANGUAGE_CONSTANTS } from 'store/modules';
   import lang from './lang';
   import Icon from 'components/Icon';
 
   export default {
     name: 'Recommendations',
-    props: {
-      language: {
-        type: String,
-        default: 'EN',
-      }
-    },
     components: {
       Icon,
     },
     computed: {
+      ...mapGetters({
+        language: LANGUAGE_CONSTANTS.GET_LANGUAGE,
+      }),
       title: function () {
         return lang[this.language].title
       },

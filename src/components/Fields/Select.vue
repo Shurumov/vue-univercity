@@ -1,10 +1,11 @@
 <template>
   <vSelect
           class="select-base"
-          v-model="selected"
+          @input="onInput"
           :options="options"
           :contents="{Deselect}"
           :clearable="false"
+          v-model="selected"
   />
 </template>
 
@@ -20,6 +21,7 @@
     props: {
       options: Array,
       defaultInputValue: Object,
+      onInput: Function,
     },
     data() {
       return {

@@ -22,6 +22,8 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
+  import { LANGUAGE_CONSTANTS } from 'store/modules';
   import lang from './lang'
   import Icon from 'components/Icon'
 
@@ -30,13 +32,10 @@
     components: {
       Icon,
     },
-    props: {
-      language: {
-        type: String,
-        default: 'EN'
-      }
-    },
     computed: {
+      ...mapGetters({
+        language: LANGUAGE_CONSTANTS.GET_LANGUAGE,
+      }),
       advantagesList: function () {
         return lang[this.language].advantages;
       },

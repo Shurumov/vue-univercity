@@ -16,6 +16,8 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
+  import { LANGUAGE_CONSTANTS } from 'store/modules';
   import {VPopover} from 'v-tooltip';
   import Item from './Item';
   import Popover from './Popover';
@@ -29,10 +31,6 @@
         default: () => {
         },
       },
-      language: {
-        type: String,
-        default: 'EN',
-      }
     },
     components: {
       VPopover,
@@ -40,6 +38,9 @@
       Popover,
     },
     computed: {
+      ...mapGetters({
+        language: LANGUAGE_CONSTANTS.GET_LANGUAGE,
+      }),
       titles: function () {
         return lang[this.language];
       }

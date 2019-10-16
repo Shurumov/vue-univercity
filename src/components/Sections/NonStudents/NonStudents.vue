@@ -15,6 +15,8 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
+  import { LANGUAGE_CONSTANTS } from 'store/modules';
   import lang from './lang';
   import Button from 'components/Button';
 
@@ -23,13 +25,10 @@
     components: {
       Button,
     },
-    props: {
-      language: {
-        type: String,
-        default: 'EN'
-      }
-    },
     computed: {
+      ...mapGetters({
+        language: LANGUAGE_CONSTANTS.GET_LANGUAGE,
+      }),
       invites: function () {
         return lang[this.language].invites;
       },
