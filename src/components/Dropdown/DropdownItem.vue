@@ -21,7 +21,7 @@
 </template>
 
 <script>
-  import Icon from '../Icon';
+  import Icon from 'components/Icon';
 
   export default {
     name: 'DropdownItem',
@@ -46,7 +46,7 @@
 </script>
 
 <style lang="scss">
-  @import '../../styles/_variables';
+  @import 'styles/_variables';
 
   .dropdown__empty-cart {
     display: block;

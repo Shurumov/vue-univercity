@@ -14,8 +14,8 @@
 </template>
 
 <script>
-  import Header from './components/Header';
-  import Footer from './components/Footer/Footer';
+  import Header from 'components/Header';
+  import Footer from 'components/Footer/Footer';
   import { FindCourse, Advantages, Recommendations, NonStudents, Partners, Comments, TopCategories, Courses } from './components/Sections'
 
   export default {

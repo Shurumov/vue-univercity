@@ -24,8 +24,8 @@
 </template>
 
 <script>
-  import Button from '../../Button'
-  import Wrapper from '../../Wrapper';
+  import Button from 'components/Button'
+  import Wrapper from 'components/Wrapper';
   import lang from './lang'
 
   export default {

@@ -67,7 +67,7 @@
 </script>
 
 <style lang="scss">
-  @import '../styles/_variables';
+  @import 'styles/_variables';
 
   .button-container {
     border-bottom: 1px solid $button-search-color;

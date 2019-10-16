@@ -92,16 +92,16 @@
 </template>
 
 <script>
+  import {Fragment} from 'vue-fragment'
   import MobileLeftMenu from './MobileLeftMenu/MobileLeftMenu';
   import Cart from './Cart';
   import Controls from './Controls/Controls';
   import Catalog from './Catalog/Catalog';
   import Search from './Search/Search';
-  import Dropdown from '../Dropdown';
-  import Wrapper from '../Wrapper';
-  import {ROUTES} from "../../config/constants";
-  import {Fragment} from 'vue-fragment'
-  import Icon from '../Icon';
+  import Dropdown from 'components/Dropdown';
+  import Wrapper from 'components/Wrapper';
+  import {ROUTES} from "config/constants";
+  import Icon from 'components/Icon';
 
 
   import lang from './lang.json';

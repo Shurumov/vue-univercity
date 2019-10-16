@@ -51,7 +51,7 @@
 
 <script>
   import lang from './lang';
-  import Select from '../Fields/Select';
+  import Select from 'components/Fields/Select';
   import { Fragment } from 'vue-fragment';
 
   export default {

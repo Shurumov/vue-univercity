@@ -21,9 +21,9 @@
 
 <script>
   import lang from './lang';
-  import TextField from '../../Fields/TextField'
-  import Button from '../../Button'
-  import Icon from '../../Icon';
+  import TextField from 'components/Fields/TextField'
+  import Button from 'components/Button'
+  import Icon from 'components/Icon';
 
 
   export default {

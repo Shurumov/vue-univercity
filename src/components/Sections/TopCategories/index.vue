@@ -71,7 +71,7 @@
 </script>
 
 <style lang="scss">
-  @import '../../../styles/_variables';
+  @import 'styles/_variables';
 
   .categories {
     position: relative;

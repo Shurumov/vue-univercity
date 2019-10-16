@@ -22,8 +22,8 @@
 </template>
 
 <script>
-  import ButtonCoursesType from '../../ButtonCoursesType';
-  import CarouselCourses from '../../CarouselCourses';
+  import ButtonCoursesType from 'components/ButtonCoursesType';
+  import CarouselCourses from 'components/CarouselCourses';
   import lang from './lang';
 
   export default {

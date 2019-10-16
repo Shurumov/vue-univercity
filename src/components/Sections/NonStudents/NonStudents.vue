@@ -16,7 +16,7 @@
 
 <script>
   import lang from './lang';
-  import Button from '../../Button';
+  import Button from 'components/Button';
 
   export default {
     name: 'Advantages',

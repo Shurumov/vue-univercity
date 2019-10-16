@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import CustomCarousel from '../../CustomCarousel';
+  import CustomCarousel from 'components/CustomCarousel';
   import lang from './lang';
 
   export default {
@@ -85,7 +85,7 @@
 </script>
 
 <style lang="scss">
-  @import '../../../styles/_variables';
+  @import 'styles/_variables';
 
   .comments {
     background-color: white;

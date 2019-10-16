@@ -21,9 +21,9 @@
 </template>
 
 <script>
-  import Icon from '../../Icon';
-  import Dropdown from '../../Dropdown';
-  import Wrapper from '../../Wrapper';
+  import Icon from 'components/Icon';
+  import Dropdown from 'components/Dropdown';
+  import Wrapper from 'components/Wrapper';
 
   import lang from './lang';
 
