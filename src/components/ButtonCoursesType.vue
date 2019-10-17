@@ -4,7 +4,7 @@
       v-for="(option, index) of btnTitles"
       :key="index"
       :modificationClass="getClass('btn_category-toggle_active', index)"
-      :onClick="() => {stateBtn(option, index); clickButton()}"
+      :onClick="() => {stateBtn(option, index); clickButton(option)}"
       colorStyle="category"
     >
       {{option}}

@@ -53,9 +53,8 @@
       },
     },
     methods: {
-      clickButton: function () {
-        // eslint-disable-next-line
-        console.log(1);
+      clickButton: function (values) {
+        this.fetchCourses(values);
       },
       ...mapActions([
         'fetchCourses',

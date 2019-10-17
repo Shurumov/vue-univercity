@@ -22,8 +22,8 @@ export const COURSES_CONSTANTS = {
 
 export const coursesState = {
   state: {
-    payload: {},
-    payloadPopular: {},
+    payload: undefined,
+    payloadPopular: undefined,
   },
   mutations: {
     setCourses(state, payload) {
