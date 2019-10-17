@@ -38,38 +38,6 @@
             },
           ],
         },
-        comments: [
-          {
-            "title": "Borivoje",
-            "icon": "",
-            "description": "I don't have the time or money for a college education. My goal is to become a freelance web developer, I'm really close."
-          },
-          {
-            "title": "Dipesh",
-            "icon": "",
-            "description": "I believe in lifelong learning. I've learned a lot and recommend it to all my friends.\n"
-          },
-          {
-            "title": "Kathy",
-            "icon": "",
-            "description": "The courses are fantastic and the instructors are so fun and knowledgeable. I only wish we found it sooner.\n"
-          },
-          {
-            "title": "Zulaika",
-            "icon": "",
-            "description": "I work in project management and joined because I get great courses for less. The instructors are fantastic, interesting, and helpful.\n"
-          },
-          {
-            "title": "Marco",
-            "icon": "",
-            "description": "Thank you! You've renewed my passion for learning and my dream of becoming a web developer."
-          },
-          {
-            "title": "Justin",
-            "icon": "",
-            "description": "The best part is the selection. You can find a course for anything you want to learn!"
-          }
-        ]
       }
     },
     computed: {

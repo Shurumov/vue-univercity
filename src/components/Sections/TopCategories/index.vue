@@ -3,14 +3,14 @@
     <div class="content_container">
       <div class="categories__title">{{title}}</div>
       <div class="categories__items">
-        <ItemCategory v-for="(item, index) of payload" :data="item" :key="index" />
+        <ItemCategory v-for="(item, index) of categories" :data="item" :key="index" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import { mapGetters } from 'vuex';
+  import { mapState, mapGetters } from 'vuex';
   import { LANGUAGE_CONSTANTS } from 'store/modules';
   import ItemCategory from './ItemCategory'
   import lang from './lang';
@@ -20,45 +20,11 @@
     components: {
       ItemCategory
     },
-    data() {
-      return {
-        payload: [
-          {
-            "title": "Development",
-            "icon": "calculator"
-          },
-          {
-            "title": "Business",
-            "icon": "barChart"
-          },
-          {
-            "title": "IT and Software",
-            "icon": "desktop"
-          },
-          {
-            "title": "Design",
-            "icon": "dashboard"
-          },
-          {
-            "title": "Marketing",
-            "icon": "control"
-          },
-          {
-            "title": "Personal Development",
-            "icon": "lock"
-          },
-          {
-            "title": "Photography",
-            "icon": "camera"
-          },
-          {
-            "title": "Music",
-            "icon": "sound"
-          }
-        ]
-      }
-    },
+
     computed: {
+      ...mapState({
+        categories: state => state.categoriesState.payload,
+      }),
       ...mapGetters({
         language: LANGUAGE_CONSTANTS.GET_LANGUAGE,
       }),

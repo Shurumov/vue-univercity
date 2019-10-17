@@ -10,7 +10,7 @@ const getComments = function(){
   // return await axios.get(url)
   return axios({
     method: 'get',
-    url: 'http://localhost:3001/comments'
+    url: `http://localhost:3001${API_METHODS.COMMENTS}`
   })
     .then(response => {
       return response;
