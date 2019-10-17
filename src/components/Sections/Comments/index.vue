@@ -2,14 +2,14 @@
   <div class="comments">
     <div class="comments__wrapper content_container">
       <div class="comments__wrapper_title">{{title}}</div>
-      <CustomCarousel id="comments" :data="comments" :options="options" typeItem="comments" />
+      <CustomCarousel v-if="commentsStore.length > 0" id="comments" :data="commentsStore" :options="options" typeItem="comments"/>
     </div>
   </div>
 </template>
 
 <script>
-  import { mapGetters } from 'vuex';
-  import { LANGUAGE_CONSTANTS } from 'store/modules';
+  import {mapState, mapGetters, mapActions} from 'vuex';
+  import {LANGUAGE_CONSTANTS} from 'store/modules';
   import CustomCarousel from 'components/CustomCarousel';
   import lang from './lang';
 
@@ -22,7 +22,7 @@
       return {
         options: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           responsive: [
             {
               breakpoint: 992,
@@ -47,39 +47,50 @@
           {
             "title": "Dipesh",
             "icon": "",
-            "description":"I believe in lifelong learning. I've learned a lot and recommend it to all my friends.\n"
+            "description": "I believe in lifelong learning. I've learned a lot and recommend it to all my friends.\n"
           },
           {
             "title": "Kathy",
             "icon": "",
-            "description":"The courses are fantastic and the instructors are so fun and knowledgeable. I only wish we found it sooner.\n"
+            "description": "The courses are fantastic and the instructors are so fun and knowledgeable. I only wish we found it sooner.\n"
           },
           {
             "title": "Zulaika",
             "icon": "",
-            "description":"I work in project management and joined because I get great courses for less. The instructors are fantastic, interesting, and helpful.\n"
+            "description": "I work in project management and joined because I get great courses for less. The instructors are fantastic, interesting, and helpful.\n"
           },
           {
             "title": "Marco",
             "icon": "",
-            "description":"Thank you! You've renewed my passion for learning and my dream of becoming a web developer."
+            "description": "Thank you! You've renewed my passion for learning and my dream of becoming a web developer."
           },
           {
             "title": "Justin",
             "icon": "",
-            "description":"The best part is the selection. You can find a course for anything you want to learn!"
+            "description": "The best part is the selection. You can find a course for anything you want to learn!"
           }
         ]
       }
     },
     computed: {
+      ...mapState({
+        commentsStore: state => state.commentsState.payload,
+      }),
       ...mapGetters({
         language: LANGUAGE_CONSTANTS.GET_LANGUAGE,
       }),
       title: function () {
         return lang[this.language].title;
       }
-    }
+    },
+    methods: {
+      ...mapActions([
+        'fetchComments',
+      ])
+    },
+    created() {
+      this.fetchComments();
+    },
   }
 </script>
 
