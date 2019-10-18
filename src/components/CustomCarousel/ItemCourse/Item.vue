@@ -57,9 +57,9 @@
     position: relative;
     text-align: left;
     vertical-align: top;
-    width: 216px;
+    width: 215px;
     height: 290px;
-    margin: 10px;
+    margin: 5px;
     border: none;
     box-sizing: border-box;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
