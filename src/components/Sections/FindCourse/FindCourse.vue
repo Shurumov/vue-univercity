@@ -39,7 +39,7 @@
     align-items: center;
     align-content: center;
     color: $gray-dark-2;
-    background-image: url("~@/assets/images/london-eye.jpeg");
+    background-image: url("~@/assets/london-eye.jpeg");
     width: 100%;
     height: 500px;
     background-position: top;

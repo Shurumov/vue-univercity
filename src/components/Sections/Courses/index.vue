@@ -62,7 +62,7 @@
       ])
     },
     created() {
-      this.fetchCourses('Business');
+      this.fetchCourses('Development');
       this.fetchCoursesPopular('Popular');
     }
   }

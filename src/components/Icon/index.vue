@@ -41,7 +41,7 @@
     },
     computed: {
       filepath: function () {
-        return require(`assets/icons/${this.name}.svg`)
+        return require(`components/icons/${this.name}.svg`)
       },
     }
   }
