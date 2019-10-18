@@ -2,16 +2,11 @@ import {getAxios} from 'utils/api/axiosClient';
 import {
   API_METHODS
 } from 'config/constants';
-import axios from 'axios';
 
-const getCourses = function(category){
-  return axios({
-    method: 'get',
-    url: `http://localhost:3001${API_METHODS.COURSES}/${category}`
-  })
-    .then(response => {
-      return response;
-    })
+const getCourses = async function(category){
+  const url = `${API_METHODS.COURSES}/${category}`;
+  const axios = getAxios();
+  return await axios.get(url);
 };
 
 export const COURSES_CONSTANTS = {
@@ -36,11 +31,11 @@ export const coursesState = {
   actions: {
     async fetchCourses({commit}, category) {
       const response = await getCourses(category);
-      commit('setCourses', response.data)
+      commit('setCourses', response)
     },
     async fetchCoursesPopular({commit}, category) {
       const response = await getCourses(category);
-      commit('setCoursesPopular', response.data)
+      commit('setCoursesPopular', response)
     }
   },
   getters: {}

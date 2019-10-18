@@ -1,20 +1,10 @@
 import {getAxios} from 'utils/api/axiosClient';
-import {
-  API_METHODS
-} from 'config/constants';
-import axios from 'axios';
+import {API_METHODS} from 'config/constants';
 
-const getComments = function(){
-  // const url = `${API_METHODS.COMMENTS}`;
-  // const axios = getAxios();
-  // return await axios.get(url)
-  return axios({
-    method: 'get',
-    url: `http://localhost:3001${API_METHODS.COMMENTS}`
-  })
-    .then(response => {
-      return response;
-    })
+const getComments = async () => {
+  const url = `${API_METHODS.COMMENTS}`;
+  const axios = getAxios();
+  return await axios.get(url);
 };
 
 export const COMMENTS_CONSTANTS = {
@@ -33,7 +23,7 @@ export const commentsState = {
   actions: {
     async fetchComments({commit}) {
       const response = await getComments();
-      commit('setComments', response.data)
+      commit('setComments', response)
     }
   },
   getters: {

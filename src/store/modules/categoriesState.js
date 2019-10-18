@@ -1,16 +1,13 @@
 import {
   API_METHODS
 } from 'config/constants';
-import axios from 'axios';
+import {getAxios} from "../../utils/api/axiosClient";
 
-const getCategories = function(){
-  return axios({
-    method: 'get',
-    url: `http://localhost:3001${API_METHODS.CATEGORIES}`
-  })
-    .then(response => {
-      return response;
-    })
+const getCategories = async function(){
+
+  const url = `${API_METHODS.CATEGORIES}`;
+  const axios = getAxios();
+  return await axios.get(url);
 };
 
 export const CATEGORIES_CONSTANTS = {
@@ -29,7 +26,7 @@ export const categoriesState = {
   actions: {
     async fetchComments({commit}) {
       const response = await getCategories();
-      commit('setCategories', response.data)
+      commit('setCategories', response)
     }
   },
   getters: {}
