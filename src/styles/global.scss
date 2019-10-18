@@ -1,5 +1,7 @@
 .content_container {
   width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
   @media (min-width: 768px) {
     width: 750px;
   }

@@ -11,7 +11,6 @@
     <Button colorStyle="search" type="submit" modificationClass="header-search-form__submit">
       <Icon
               name="search"
-              fill="#2727a4"
               :width="20"
               :height="20"
       />
@@ -68,6 +67,9 @@
   }
 
   .header-search-form__submit {
+    svg {
+      fill: $button-blue;
+    }
     &:hover {
       svg {
         fill: $white;

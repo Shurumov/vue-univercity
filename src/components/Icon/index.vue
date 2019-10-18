@@ -25,7 +25,6 @@
       },
       fill: {
         type: String,
-        default: '#000000'
       },
       stroke: {
         type: String,
