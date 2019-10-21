@@ -24,7 +24,7 @@ export const categoriesState = {
     }
   },
   actions: {
-    async fetchComments({commit}) {
+    async fetchCategories({commit}) {
       const response = await getCategories();
       commit('setCategories', response)
     }

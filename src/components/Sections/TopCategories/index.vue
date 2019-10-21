@@ -10,7 +10,7 @@
 </template>
 
 <script>
-  import { mapState, mapGetters } from 'vuex';
+  import { mapState, mapGetters, mapActions } from 'vuex';
   import { LANGUAGE_CONSTANTS } from 'store/modules';
   import ItemCategory from './ItemCategory'
   import lang from './lang';
@@ -31,7 +31,15 @@
       title: function () {
         return lang[this.language].title;
       }
-    }
+    },
+    methods:{
+      ...mapActions([
+        'fetchCategories',
+      ]),
+    },
+    created() {
+      this.fetchCategories();
+    },
   }
 </script>
 
